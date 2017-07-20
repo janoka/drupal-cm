@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Creating database.
-db c drupal8_cm drupal drupal
+db c drupal8_dev drupal drupal
 
 # Adding repository for BAckup and Migrate.
 composer config repositories.backup_migrate vcs https://github.com/backupmigrate/backup_migrate_core
