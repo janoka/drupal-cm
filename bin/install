@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Creating database.
+db c drupal8_cm drupal drupal
+
+# Adding repository for BAckup and Migrate.
+composer config repositories.backup_migrate vcs https://github.com/backupmigrate/backup_migrate_core
+
+# Adding used modules.
+composer require \
+  drupal/coffee \
+  drupal/admin_toolbar \
+  drupal/pathauto \
+  drupal/imce \
+  drupal/config_ignore \
+  drupal/config_readonly \
+  drupal/webform \
+  psr/log \
+  drupal/backup_migrate
+composer require --dev drupal/devel
+
+# Install Drupal 8 website.
+drush site-install \
+  --account-mail='info@example.com' \
+  --account-name=admin \
+  --account-pass='pass' \
+  --strict=0 \
+  --site-name='Example' \
+  --site-mail='info@example.com' \
+  --yes \
+  --root="$(pwd)/web" \
+  --uri=http://drupal8-cm.w \
+  --db-url=mysql://drupal:drupal@127.0.0.1:3306/drupal8_cm
+
+# Enable contrib modules
+drush --root="$(pwd)/web" --yes pm-enable \
+  admin_toolbar \
+  config_ignore \
+  config_readonly \
+  coffee
+
+# Export config settings.
+drush --root="$(pwd)/web" --yes config-export
+
+# Login to the website.
+drush --root="$(pwd)/web" --uri=http://drupal8-cm.w uli
+alias drush='$HOME/www/w/drupal8-cm.w/vendor/bin/drush --root="$HOME/www/w/drupal8-cm.w/web" --uri="http://drupal8-cm.w"'
