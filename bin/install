@@ -28,8 +28,8 @@ drush site-install \
   --site-mail='info@example.com' \
   --yes \
   --root="$(pwd)/web" \
-  --uri=http://drupal8-cm.w \
-  --db-url=mysql://drupal:drupal@127.0.0.1:3306/drupal8_cm
+  --uri=http://drupal8-dev.w \
+  --db-url=mysql://drupal:drupal@127.0.0.1:3306/drupal8_dev
 
 # Enable contrib modules
 drush --root="$(pwd)/web" --yes pm-enable \
@@ -42,5 +42,6 @@ drush --root="$(pwd)/web" --yes pm-enable \
 drush --root="$(pwd)/web" --yes config-export
 
 # Login to the website.
-drush --root="$(pwd)/web" --uri=http://drupal8-cm.w uli
-alias drush='$HOME/www/w/drupal8-cm.w/vendor/bin/drush --root="$HOME/www/w/drupal8-cm.w/web" --uri="http://drupal8-cm.w"'
+drush --root="$(pwd)/web" --uri=http://drupal8-dev.w uli
+alias dev-drush='$HOME/www/w/drupal8-dev.w/vendor/bin/drush --root="$HOME/www/w/drupal8-dev.w/web" --uri="http://drupal8-dev.w"'
+alias live-drush='$HOME/www/w/drupal8-live.w/vendor/bin/drush --root="$HOME/www/w/drupal8-live.w/web" --uri="http://drupal8-live.w"'

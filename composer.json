@@ -25,6 +25,7 @@
         "drupal/config_readonly": "^1.0@beta",
         "drupal/console": "~1.0",
         "drupal/core": "~8.0",
+        "drupal/environment_indicator": "^3.0",
         "drupal/masquerade": "^2.0@beta",
         "drupal/pathauto": "^1.0",
         "drupal/webform": "^5.0@beta",
