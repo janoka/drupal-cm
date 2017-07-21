@@ -1,4 +1,7 @@
 <?php
+$config['environment_indicator.indicator']['name'] = 'Development';
+$config['environment_indicator.indicator']['bg_color'] = '#30703d';
+
 $config_directories['sync'] = '../config/sync';
 $databases['default']['default'] = array (
   'database' => 'drupal8_dev',
@@ -13,5 +16,6 @@ $databases['default']['default'] = array (
 $settings['trusted_host_patterns'] = [
   '^drupal8-dev\.w$',
 ];
-$config['environment_indicator.indicator']['name'] = 'Local Development';
-$config['environment_indicator.indicator']['bg_color'] = '#30703d';
+
+# $settings['config_readonly'] = TRUE;
+
