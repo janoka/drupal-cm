@@ -1,0 +1,10 @@
+uuid: b199c450-01b7-4dcc-9f96-0b2bb22fff69
+langcode: en
+status: true
+dependencies: {  }
+machine: development
+description: null
+name: Development
+url: 'http://drupal8-dev.local'
+fg_color: '#d0d0d0'
+bg_color: '#007615'
